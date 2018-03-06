@@ -1,0 +1,10 @@
+<view class='swipe-navs'>
+  <view class='swipe-item-list {{currentTabIndex === 0 ? "on" : ""}}' data-index='0' bindtap='bindSelNav'>选项1</view>
+  <view class='swipe-item-list {{currentTabIndex === 1 ? "on" : ""}}' data-index='1' bindtap='bindSelNav'>选项2</view>
+  <view class='swipe-item-list {{currentTabIndex === 2 ? "on" : ""}}' data-index='2' bindtap='bindSelNav'>选项3</view>
+  <view class='swipe-slide' animation='{{animationData}}'></view>
+</view>
+<swiper autoplay='{{false}}' circular class='m-swiper' current='{{currentTabIndex}}' bindchange='swipeChange'>
+  <swiper-item class='m-swiper-item' wx:for='{{swipers}}' wx:key='key' style='background: {{item.color}}'>
+  </swiper-item>
+</swiper>

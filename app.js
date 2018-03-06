@@ -32,8 +32,19 @@ App({
         }
       }
     })
+
+    wx.getSystemInfo({
+      success: (res) => {
+        this.globalData.deviceWidth = res.windowWidth
+        this.globalData.deviceHeight = res.windowHeight
+        this.globalData.rpxRatio = res.windowWidth/750
+      },
+    })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    deviceWidth: 0,
+    deviceHeight: 0,
+    rpxRatio: 1
   }
 })
